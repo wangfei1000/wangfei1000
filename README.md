@@ -1,2 +1,0 @@
-# saltstack
-saltstack config file
