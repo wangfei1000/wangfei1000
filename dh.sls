@@ -1,3 +1,3 @@
 test:
   cmd.run:
-    - name: date 
+    - name: pwd 
