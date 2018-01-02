@@ -1,12 +1,9 @@
 zabbix-agent:
   pkg.installed:
-    - name: zabbix22-agent
+    - name: zabbix-agent
   file.managed:
     - name: /etc/zabbix_agentd.conf
-    - source: salt://init/files/zabbix_agentd.conf
-    - template: jinja
-    - defaults:
-      Server: {{ pillar['zabbix-agent']['Zabbix_Server'] }}
+    - source: salt://base/init/files/zabbix_agentd.conf
     - require:
       - pkg: zabbix-agent
   service.running:
