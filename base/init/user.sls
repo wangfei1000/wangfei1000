@@ -1,16 +1,14 @@
 dhom:
   user.present:
-    - fullname: dhom
     - shell: /bin/bash
-    - home: /home/dhom
+    - createhome:true
     - uid: 1001
     - gid: 1001
 
 dba:
   user.present:
-    - fullname: dba
     - shell: /bin/bash
-    - home: /home/dba
+    - createhome: true
     - uid: 2001
     - gid: 2001
 
