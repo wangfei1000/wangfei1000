@@ -1,4 +1,4 @@
-iptablesapp:
+iptables:
 
 {%- if grains['os'] == 'CentOS' %}
   cmd.run:
@@ -15,10 +15,10 @@ iptablesapp:
     - gourp: root
     - mode: 600
     - require:
-      - pkg: iptablesapp
+      - pkg: iptables
 
   service.running:
     - enable: True
     - watch:
-      - pkg: iptablesapp
-      - file: iptablesapp
+      - pkg: iptables
+      - file: iptables
