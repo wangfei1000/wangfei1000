@@ -2,16 +2,14 @@ adduser:
   user.present:
     - fullname: dhom
     - shell: /bin/bash
-    - system: true
-    - createhome: true
+    - home: /home/dhom
     - uid: 1001
     - gid: 1001
 
   user.present:
     - fullname: dba
     - shell: /bin/bash
-    - system: true
-    - createhome: true
+    - home: /home/dba
     - uid: 2001
     - gid: 2001
 
