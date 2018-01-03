@@ -3,7 +3,7 @@ iptablesapp:
 {%- if grains['os'] == 'CentOS' %}
   cmd.run:
     - name: systemctl stop firewalld.service && systemctl disable firewalld.service
-{%- endif % }
+{%- endif %}
 
   pkg.installed:
     - name: iptables-services

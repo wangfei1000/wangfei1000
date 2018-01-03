@@ -1,4 +1,4 @@
-adduser:
+adduserdhom:
   user.present:
     - fullname: dhom
     - shell: /bin/bash
@@ -6,6 +6,7 @@ adduser:
     - uid: 1001
     - gid: 1001
 
+adduserdba:
   user.present:
     - fullname: dba
     - shell: /bin/bash
