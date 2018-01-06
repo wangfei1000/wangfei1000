@@ -1,7 +1,13 @@
-dba:
-    user.present:
-      - shell: /bin/bash
-      - createhome: true
-      - uid: 2001
-      - gid: 2001
+dhom:
+  user.present:
+    - fullname: dhom
+    - shell: /bin/bash
+    - home: /home/dhom
+    - uid: 1001
 
+dba:
+  user.present:
+    - fullname: dba
+    - shell: /bin/bash
+    - home: /home/dba
+    - uid: 2001

@@ -63,8 +63,14 @@
         - mode: 755
         - makedirs: True
         - user: dhom
-        - group: dhom	
+        - group: dhom
 /data/tools/snmpwalk:
+    file.directory:
+        - mode: 755
+        - makedirs: True
+        - user: dhom
+        - group: dhom
+/data/tools/ntpdate/:
     file.directory:
         - mode: 755
         - makedirs: True
