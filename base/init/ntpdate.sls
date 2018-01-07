@@ -4,7 +4,7 @@ ntpdate:
 
   file.managed:
     - name: /data/tools/ntpdate/ntp.sh
-    - source: salt://init/files/ntp.sh
+    - source: salt://base/init/files/ntp.sh
     - mode: 777
     - user: dhom
     - group: dhom

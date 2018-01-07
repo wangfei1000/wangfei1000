@@ -15,7 +15,7 @@ iptables:
 
   file.managed:
     - name: /etc/sysconfig/iptables
-    - source: salt://init/files/iptables
+    - source: salt://base/init/files/iptables
     - user: root
     - gourp: root
     - mode: 600

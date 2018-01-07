@@ -1,7 +1,11 @@
 include:
-  - init.dns    
-  - init.history
-  - init.audit
-  - init.sysctl
-  - init.epel
-  - init.zabbix_agent
+  - base.init.user
+  - base.init.audit
+  - base.init.directory
+  - base.init.packages
+  - base.init.dns
+  - base.init.history
+  - base.init.iptables
+  - base.init.ntpdate
+  - base.init.sysctl
+  - base.init.zabbix_agent
