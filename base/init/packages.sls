@@ -22,3 +22,7 @@ base-soft:
       - tcpdump
       - ipmitool
       - strace
+      - zabbix-agent
+  {% if grains['osfinger'] == 'CentOS Linux-7' %}
+      - iptables-services
+  {% endif %}

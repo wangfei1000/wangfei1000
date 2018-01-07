@@ -1,31 +1,29 @@
 firewalld:
-{%- if grains['osfinger'] == 'CentOS Linux-7' %}
+  cmd.run:
+    - name: echo "stop firewalld, if os is c7 will not to do."
+
+  {% if grains['osfinger'] == 'CentOS Linux-7' %}
   service.running:
+    - name: firewalld
     - enable: false 
     - reload: false
-  cmd.run:
-    - name: systemctl disable firewalld
-    - requires:
-      - service: firewalld
-{%- endif %}
-
+  {% endif %}
 
 iptables:
-  pkg.installed:
-    - name: iptables-services
-
   file.managed:
     - name: /etc/sysconfig/iptables
-    - source: salt://base/init/files/iptables
+    - source: salt://init/files/iptables
     - user: root
     - group: root
     - mode: 600
-    - require:
-      - pkg: iptables
 
   service.running:
     - enable: True
     - reload: True
     - watch:
-      - pkg: iptables
       - file: iptables
+
+  {% if grains['osfinger'] == 'CentOS Linux-7' %}
+  cmd.run:
+    - name: systemctl disable firewalld
+  {% endif %}
