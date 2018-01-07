@@ -1,5 +1,5 @@
 firewalld:
-{%- if grains['oscodename'] == 'CentOS Linux 7 (Core)' %}
+{%- if grains['osfinger'] == 'CentOS Linux-7' %}
   service.running:
     - enable: false 
     - reload: false
@@ -9,6 +9,7 @@ firewalld:
       - service: firewalld
 {%- endif %}
 
+
 iptables:
   pkg.installed:
     - name: iptables-services
@@ -17,7 +18,7 @@ iptables:
     - name: /etc/sysconfig/iptables
     - source: salt://base/init/files/iptables
     - user: root
-    - gourp: root
+    - group: root
     - mode: 600
     - require:
       - pkg: iptables
