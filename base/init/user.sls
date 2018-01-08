@@ -1,3 +1,6 @@
+include:
+  - base.init.vim
+
 dhom:
   user.present:
     - fullname: dhom

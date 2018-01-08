@@ -1,4 +1,5 @@
 include:
+  - base.init.vim
   - base.init.user
   - base.init.audit
   - base.init.directory
